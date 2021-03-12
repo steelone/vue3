@@ -18,6 +18,39 @@
 <body>
     <div class="container pt-5" id="app" v-cloak>
         <div class="card center">
+            <div>
+                <!-- <div class="md-radio">
+                    <input class="o1" id="1" type="radio" name="g">
+                    <label class="l1" for="1">Option 1</label>
+                    <span>Option 1</span>
+                </div>
+                <div class="md-radio">
+                    <input class="o2" id="2" type="radio" name="g" :checked="titleCounter === 'Counter'">
+                    <label class="l2" for="2">Option 2</label>
+                    <span>Option 2</span>
+                </div> -->
+
+                <div>
+                    <div class="md-radio">
+                        <input id="1" type="radio" name="g" checked>
+                        <label for="1">Option 1</label>
+                    </div>
+                    <div class="md-radio">
+                        <input id="2" type="radio" name="g">
+                        <label for="2">Option 2</label>
+                    </div>
+                </div>
+
+                <div>
+                    <input type="radio" class="check-with-label" id="idinput" />
+                    <label class="label-for-check" for="idinput">My Label</label>
+                </div>
+                <div>
+                    <input type="radio" class="check-with-label" id="idinput" />
+                    <label class="label-for-check" for="idinput">My Label</label>
+                </div>
+            </div>
+
             <h1 :style="{
                 color: inputValue.length<5 ? 'darkred':'darkblue',
                 fontSize: inputValue.length<5 ? '2rem':'1rem'
@@ -29,8 +62,7 @@
             </hr>
             <h1>{{titleNotes}}</h1>
             <div class="form-control">
-                <input type="text" :placeholder="placeholderString"
-                    :value="inputValue" v-model="inputValue"
+                <input type="text" :placeholder="placeholderString" :value="inputValue" v-model="inputValue"
                     @keypress.enter="addNewNote" />
             </div>
             <h2>inputValue: {{inputValue}}</h2>
@@ -48,12 +80,10 @@
                     }">
                         {{index}}. {{toUpperCase(note)}}
                     </span> -->
-                    <span
-                        :class="['primary', {'bold': note.length > 5}]">{{index}}.
+                    <span :class="['primary', {'bold': note.length > 5}]">{{index}}.
                         {{toUpperCase(note)}}
                     </span>
-                    <button class="btn danger"
-                        @click="removeNote(index)">Delete</button>
+                    <button class="btn danger" @click="removeNote(index)">Delete</button>
                 </li>
                 <hr>
                 <li>
@@ -78,8 +108,8 @@
             </ul>
             <ul class="list" v-if="items.length">
                 <!-- <li class="list-item" v-for="(item, i) in evenItems" -->
-                <li class="list-item" v-for="(item, i) in items"
-                    @click.right.prevent="removeItem(i), log(item)" :key="item">
+                <li class="list-item" v-for="(item, i) in items" @click.right.prevent="removeItem(i), log(item)"
+                    :key="item">
                     <strong>{{item}}</strong>&nbsp;
                     <input type="text" @click.stop>
                 </li>
@@ -89,6 +119,20 @@
             <div class="form-control">
                 <input type="text" @keyup.enter="addItem" ref="myInput">
             </div>
+        </div>
+        <br>
+        </hr>
+        <div class="main">
+            <div class="bar-base">
+                <div class="btn" @click="setContent('1')">111</div>
+                <div class="btn" @click="setContent('2')">222</div>
+                <div class="btn" @click="setContent('3')">333</div>
+            </div>
+        </div>
+        <div class="child" v-if="barBaseState === '1'">11111111111 CONTENT</div>
+        <div class="child" v-if="barBaseState === '2'">22222222222 CONTENT</div>
+        <div class="child" v-if="barBaseState === '3'">333333333333 CONTENT</div>
+        <div class="child">
         </div>
     </div>
 

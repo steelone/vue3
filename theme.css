@@ -411,3 +411,104 @@ h3 {
 .navbar-menu li a.active {
   border-bottom: 2px solid #3eaf7c;
 }
+.main {
+  background-color: #ff5b5b;
+}
+.main, .main div, .bar-base{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main {
+  background: url("http://3.bp.blogspot.com/_EqZzf-l7OCg/TNmdtcyGBZI/AAAAAAAAAD8/KD5Y23c24go/s1600/homer-simpson-1280x1024.jpg") no-repeat;
+  background-size: 100% 100%;
+}
+
+.main div, .bar-base {
+  flex-direction: column;  
+}
+.child {
+  color: white;
+}
+
+
+input[type="radio"] {
+  /* display: none; */
+}
+input[type="radio"]:checked + label {
+  color: black;
+  /* animation: ripple 0.2s linear forwards;    */
+}
+input[type="radio"]:checked + label {
+  /* transform: scale(1); */
+  color: green;
+  background-color: rgb(0, 204, 255);
+}
+
+/* .o1:checked + .l1 {
+  font-weight: bold;
+  color: green;
+  background-color: red;
+} */
+.check-with-label:checked + .label-for-check {
+  font-weight: bold;
+}
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);
+  }
+  50% {
+    box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);
+  }
+}
+.md-radio {
+  margin: 16px 0;
+}
+.md-radio.md-radio-inline {
+  display: inline-block;
+}
+.md-radio input[type=radio] {
+  display: none;
+}
+.md-radio input[type=radio]:checked + label:before {
+  border-color: #337ab7;
+  animation: ripple 0.2s linear forwards;
+}
+.md-radio input[type=radio]:checked + label:after {
+  transform: scale(1);
+}
+.md-radio label {
+  display: inline-block;
+  min-height: 20px;
+  position: relative;
+  padding: 0 30px;
+  margin-bottom: 0;
+  cursor: pointer;
+  vertical-align: bottom;
+}
+.md-radio label:before, .md-radio label:after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  transition-property: transform, border-color;
+}
+.md-radio label:before {
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.54);
+}
+.md-radio label:after {
+  top: 5px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  transform: scale(0);
+  background: #337ab7;
+}

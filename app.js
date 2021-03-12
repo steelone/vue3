@@ -14,7 +14,8 @@ const App = {
                 lastName: 'Denisenko',
                 age: 30
             },
-            items: [1, 2]
+            items: [1, 2],
+            barBaseState: ''
         }
     },
     methods: {
@@ -43,6 +44,9 @@ const App = {
         },
         log(item) {
             console.log(item);
+        },
+        setContent(name){
+            this.barBaseState = name
         }
     },
     computed: {
