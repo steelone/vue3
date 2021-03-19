@@ -442,7 +442,6 @@ input[type="radio"]:checked + label {
 input[type="radio"]:checked + label {
   /* transform: scale(1); */
   color: green;
-  background-color: rgb(0, 204, 255);
 }
 
 /* .o1:checked + .l1 {
@@ -454,6 +453,7 @@ input[type="radio"]:checked + label {
   font-weight: bold;
 }
 
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 @keyframes ripple {
   0% {
     box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);
@@ -505,10 +505,10 @@ input[type="radio"]:checked + label {
   border: 2px solid rgba(0, 0, 0, 0.54);
 }
 .md-radio label:after {
-  top: 5px;
-  left: 5px;
-  width: 10px;
-  height: 10px;
+  top: 6px;
+  left: 6px;
+  width: 12px;
+  height: 12px;
   transform: scale(0);
   background: #337ab7;
 }

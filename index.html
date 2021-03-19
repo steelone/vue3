@@ -19,17 +19,6 @@
     <div class="container pt-5" id="app" v-cloak>
         <div class="card center">
             <div>
-                <!-- <div class="md-radio">
-                    <input class="o1" id="1" type="radio" name="g">
-                    <label class="l1" for="1">Option 1</label>
-                    <span>Option 1</span>
-                </div>
-                <div class="md-radio">
-                    <input class="o2" id="2" type="radio" name="g" :checked="titleCounter === 'Counter'">
-                    <label class="l2" for="2">Option 2</label>
-                    <span>Option 2</span>
-                </div> -->
-
                 <div>
                     <div class="md-radio">
                         <input id="1" type="radio" name="g" checked>
@@ -62,8 +51,8 @@
             </hr>
             <h1>{{titleNotes}}</h1>
             <div class="form-control">
-                <input type="text" :placeholder="placeholderString" :value="inputValue" v-model="inputValue"
-                    @keypress.enter="addNewNote" />
+                <input v-on:keyup.esc="cancel" type="text" :placeholder="placeholderString" :value="inputValue"
+                    v-model="inputValue" @keypress.enter="addNewNote" />
             </div>
             <h2>inputValue: {{inputValue}}</h2>
             <button class="btn" @click="addNewNote">Add</button>

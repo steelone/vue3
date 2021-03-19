@@ -47,6 +47,10 @@ const App = {
         },
         setContent(name){
             this.barBaseState = name
+        },        
+        cancel(){
+            this.inputValue = 'Esc was called'
+            console.log("result:", this.inputValue);
         }
     },
     computed: {
