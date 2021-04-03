@@ -17,14 +17,20 @@
 
 <body>
     <div class="container" id="app" v-cloak>
-        <div class="grid-layout display">
-            <div class="display-clone grid">
-                <div class="grid-layout-item-grid"
+        <!-- <div class="wrapper">
+            <div class="box1">One</div>
+            <div class="box2">Two</div>
+            <div class="box3">Three</div>
+        </div> -->
+        <div id="display" class="grid-layout display">
+            <div id="display-clone" class="display-clone grid">
+                <div class="grid-layout-grid-item"
                     v-for="(note, index) in notes">
                     {{note}}
                 </div>
             </div>
         </div>
+        <button class="btn primary" @click="grid">GRID</button>
         <div class="card center">
             Difference between flex and grid
         </div>
@@ -34,7 +40,7 @@
             </div>
         </div>
         <div class="grid-layout grid">
-            <div class="grid-layout-item-grid" v-for="(note, index) in notes">
+            <div class="grid-layout-grid-item" v-for="(note, index) in notes">
                 {{note}}
             </div>
         </div>

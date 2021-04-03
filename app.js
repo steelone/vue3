@@ -11,6 +11,15 @@ const App = {
                 'Lorem ipsum dolor sit s nostrud  Lorem ipsum dolor sit s nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
                 'Note 3',
                 'Note 4',
+                'Note 4',
+                'Note 4',
+                'Note 4',
+                'Note 4',
+                'Note 4',
+                'Note 4',
+                'Note 4',
+                'Note 4',
+                'Note 4',
                 // 'Note 5 Lorem ipsum dolor sit s nostrud exercitation ullamco laboris '
             ],
             title: 'Second part: Directives',
@@ -29,7 +38,7 @@ const App = {
         const clone = document.querySelector(".display-clone")
         console.log('xxxxxxxxxxxxxxxxxxxxx Значение display: ' + display.clientHeight)
         // clone.style.height = display.clientHeight + "px"
-        console.log('xxxxxxxxxxxxxxxxxxxxx Значение clone: ' + clone.clientHeight)
+        console.log('xxxxxxxxxxxxxxxxxxxxx Значение clone: ', JSON.stringify(clone))
     },
     methods: {
         inputChangeHandler(event) {
@@ -64,6 +73,19 @@ const App = {
         cancel() {
             this.inputValue = 'Esc was called'
             console.log("result:", this.inputValue);
+        },
+        grid() {
+            const display = document.querySelector(".display")
+            const clone = document.querySelector(".display-clone")
+            console.log('xxxxxxxxxxxxxxxxxxxxx display: ' + display.clientHeight)
+            // clone.style.height = display.clientHeight + "px"
+            console.log('xxxxxxxxxxxxxxxxxxxxx clone: ', clone)
+
+            const childs = [...clone.children].forEach(item => {
+                const properties = item.getBoundingClientRect();
+                console.log('xxxxxxxxxxxxxxxxxxxxx properties: ', properties)
+            })
+            console.log('xxxxxxxxxxxxxxxxxxxxx childs: ', childs)
         }
     },
     computed: {
