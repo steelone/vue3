@@ -6,7 +6,13 @@ const App = {
             titleNotes: 'List of notes',
             placeholderString: 'Type here',
             inputValue: '',
-            notes: ['Note 1', 'Note 2'],
+            notes: [
+                'Note 1',
+                'Lorem ipsum dolor sit s nostrud  Lorem ipsum dolor sit s nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'Note 3',
+                'Note 4',
+                // 'Note 5 Lorem ipsum dolor sit s nostrud exercitation ullamco laboris '
+            ],
             title: 'Second part: Directives',
             myHtml: '<h1>Main title</h1>',
             person: {
@@ -17,6 +23,13 @@ const App = {
             items: [1, 2],
             barBaseState: ''
         }
+    },
+    mounted() {
+        const display = document.querySelector(".display")
+        const clone = document.querySelector(".display-clone")
+        console.log('xxxxxxxxxxxxxxxxxxxxx Значение display: ' + display.clientHeight)
+        // clone.style.height = display.clientHeight + "px"
+        console.log('xxxxxxxxxxxxxxxxxxxxx Значение clone: ' + clone.clientHeight)
     },
     methods: {
         inputChangeHandler(event) {
@@ -45,10 +58,10 @@ const App = {
         log(item) {
             console.log(item);
         },
-        setContent(name){
+        setContent(name) {
             this.barBaseState = name
-        },        
-        cancel(){
+        },
+        cancel() {
             this.inputValue = 'Esc was called'
             console.log("result:", this.inputValue);
         }

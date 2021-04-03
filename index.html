@@ -16,7 +16,28 @@
 
 
 <body>
-    <div class="container pt-5" id="app" v-cloak>
+    <div class="container" id="app" v-cloak>
+        <div class="grid-layout display">
+            <div class="display-clone grid">
+                <div class="grid-layout-item-grid"
+                    v-for="(note, index) in notes">
+                    {{note}}
+                </div>
+            </div>
+        </div>
+        <div class="card center">
+            Difference between flex and grid
+        </div>
+        <div class="grid-layout flex">
+            <div class="grid-layout-item-flex" v-for="(note, index) in notes">
+                {{note}}
+            </div>
+        </div>
+        <div class="grid-layout grid">
+            <div class="grid-layout-item-grid" v-for="(note, index) in notes">
+                {{note}}
+            </div>
+        </div>
         <div class="card center">
             <div>
                 <div>
@@ -32,11 +53,13 @@
 
                 <div>
                     <input type="radio" class="check-with-label" id="idinput" />
-                    <label class="label-for-check" for="idinput">My Label</label>
+                    <label class="label-for-check" for="idinput">My
+                        Label</label>
                 </div>
                 <div>
                     <input type="radio" class="check-with-label" id="idinput" />
-                    <label class="label-for-check" for="idinput">My Label</label>
+                    <label class="label-for-check" for="idinput">My
+                        Label</label>
                 </div>
             </div>
 
@@ -51,7 +74,8 @@
             </hr>
             <h1>{{titleNotes}}</h1>
             <div class="form-control">
-                <input v-on:keyup.esc="cancel" type="text" :placeholder="placeholderString" :value="inputValue"
+                <input v-on:keyup.esc="cancel" type="text"
+                    :placeholder="placeholderString" :value="inputValue"
                     v-model="inputValue" @keypress.enter="addNewNote" />
             </div>
             <h2>inputValue: {{inputValue}}</h2>
@@ -69,10 +93,12 @@
                     }">
                         {{index}}. {{toUpperCase(note)}}
                     </span> -->
-                    <span :class="['primary', {'bold': note.length > 5}]">{{index}}.
+                    <span
+                        :class="['primary', {'bold': note.length > 5}]">{{index}}.
                         {{toUpperCase(note)}}
                     </span>
-                    <button class="btn danger" @click="removeNote(index)">Delete</button>
+                    <button class="btn danger"
+                        @click="removeNote(index)">Delete</button>
                 </li>
                 <hr>
                 <li>
@@ -97,8 +123,8 @@
             </ul>
             <ul class="list" v-if="items.length">
                 <!-- <li class="list-item" v-for="(item, i) in evenItems" -->
-                <li class="list-item" v-for="(item, i) in items" @click.right.prevent="removeItem(i), log(item)"
-                    :key="item">
+                <li class="list-item" v-for="(item, i) in items"
+                    @click.right.prevent="removeItem(i), log(item)" :key="item">
                     <strong>{{item}}</strong>&nbsp;
                     <input type="text" @click.stop>
                 </li>
@@ -120,7 +146,8 @@
         </div>
         <div class="child" v-if="barBaseState === '1'">11111111111 CONTENT</div>
         <div class="child" v-if="barBaseState === '2'">22222222222 CONTENT</div>
-        <div class="child" v-if="barBaseState === '3'">333333333333 CONTENT</div>
+        <div class="child" v-if="barBaseState === '3'">333333333333 CONTENT
+        </div>
         <div class="child">
         </div>
     </div>

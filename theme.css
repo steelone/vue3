@@ -204,7 +204,7 @@ h3 {
   margin-bottom: 1rem;
   border-radius: 10px;
   box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2);
-  background: #fff;
+  background: #84838e;
 }
 
 .card.marked {
@@ -414,23 +414,26 @@ h3 {
 .main {
   background-color: #ff5b5b;
 }
-.main, .main div, .bar-base{
+.main,
+.main div,
+.bar-base {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .main {
-  background: url("http://3.bp.blogspot.com/_EqZzf-l7OCg/TNmdtcyGBZI/AAAAAAAAAD8/KD5Y23c24go/s1600/homer-simpson-1280x1024.jpg") no-repeat;
+  background: url("http://3.bp.blogspot.com/_EqZzf-l7OCg/TNmdtcyGBZI/AAAAAAAAAD8/KD5Y23c24go/s1600/homer-simpson-1280x1024.jpg")
+    no-repeat;
   background-size: 100% 100%;
 }
 
-.main div, .bar-base {
-  flex-direction: column;  
+.main div,
+.bar-base {
+  flex-direction: column;
 }
 .child {
   color: white;
 }
-
 
 input[type="radio"] {
   /* display: none; */
@@ -471,14 +474,14 @@ input[type="radio"]:checked + label {
 .md-radio.md-radio-inline {
   display: inline-block;
 }
-.md-radio input[type=radio] {
+.md-radio input[type="radio"] {
   display: none;
 }
-.md-radio input[type=radio]:checked + label:before {
+.md-radio input[type="radio"]:checked + label:before {
   border-color: #337ab7;
   animation: ripple 0.2s linear forwards;
 }
-.md-radio input[type=radio]:checked + label:after {
+.md-radio input[type="radio"]:checked + label:after {
   transform: scale(1);
 }
 .md-radio label {
@@ -490,7 +493,8 @@ input[type="radio"]:checked + label {
   cursor: pointer;
   vertical-align: bottom;
 }
-.md-radio label:before, .md-radio label:after {
+.md-radio label:before,
+.md-radio label:after {
   position: absolute;
   content: "";
   border-radius: 50%;
@@ -511,4 +515,47 @@ input[type="radio"]:checked + label {
   height: 12px;
   transform: scale(0);
   background: #337ab7;
+}
+
+.display {
+  height: 300px;
+}
+
+.grid-layout {
+  background-color: black;
+  margin-bottom: 20px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex > .grid-layout-item-flex {
+  background-color: #97c205;
+  border: 1px solid grey;
+  min-height: 50px;
+  flex: 1 1 200px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: 100px 1fr; */
+  grid-auto-rows: minmax(100px, 1fr);
+}
+
+.grid-layout-item-grid {
+  background-color: #97c205;
+  border: 1px solid grey;
+  color: white;
+  overflow: hidden;
+}
+
+.display-clone {
+  height: 100%;
+}
+
+.display-clone > div {
+  background-color: rgb(110 0 255);
 }
