@@ -544,7 +544,7 @@ input[type="radio"]:checked + label {
   /* grid-template-rows: 100px 1fr; */
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 1fr;
-  grid-auto-flow: dense;
+  /* grid-auto-flow: dense; */
 }
 
 .grid-layout-grid-item {
@@ -591,4 +591,19 @@ input[type="radio"]:checked + label {
 }
 .box2 {
   align-self: start;
+}
+
+.title {
+  background-color: red;
+  width: 150px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: width 1s ease;
+}
+
+.fade-enter,
+.fade-leave-to {
+  width: 0;
 }

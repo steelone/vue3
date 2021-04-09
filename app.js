@@ -30,7 +30,9 @@ const App = {
                 age: 30
             },
             items: [1, 2],
-            barBaseState: ''
+            barBaseState: '',
+            showTitle: true,
+            mainWidth: 0
         }
     },
     mounted() {
@@ -41,6 +43,13 @@ const App = {
         console.log('xxxxxxxxxxxxxxxxxxxxx Значение clone: ', JSON.stringify(clone))
     },
     methods: {
+        mainCustomStyle() {
+            return `width: ${this.mainWidth}`
+        },
+        showTitleToggler() {
+            this.showTitle = !this.showTitle
+            // this.mainWidth = "300px"
+        },
         inputChangeHandler(event) {
             this.inputValue = event.target.value
         },
