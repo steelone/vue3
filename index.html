@@ -22,6 +22,14 @@
             <div class="box2">Two</div>
             <div class="box3">Three</div>
         </div> -->
+        <div class="wrapper-main">
+            <div class="wrapper-child">
+                <div class="animation">
+                    <div class="animation-item" id="a">A</div>
+                    <div class="animation-item" id="b">B</div>                    
+                </div>
+            </div>
+        </div>
         <div id="display" class="grid-layout display">
             <div id="display-clone" class="display-clone grid">
                 <div class="grid-layout-grid-item" v-for="(note, index) in notes">
@@ -31,14 +39,12 @@
         </div>
         <button class="btn primary" @click="grid">GRID</button>
         <button class="btn primary" @click="showTitleToggler">SWITCH</button>
+        <button class="btn primary" :disabled="true" @click="showTitleToggler">SWITCH</button>
         <transition name="fade" :id="person.age">
             <div class="title" v-if="showTitle">
                 Difference between flex and grid
             </div>
         </transition>
-        <div class="card center" v-bind:style="mainCustomStyle()">
-            Difference between flex and grid
-        </div>
         <div class="grid-layout flex">
             <div class="grid-layout-item-flex" v-for="(note, index) in notes">
                 {{note}}

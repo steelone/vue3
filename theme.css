@@ -521,6 +521,75 @@ input[type="radio"]:checked + label {
   height: 300px;
 }
 
+.wrapper-parent {
+  height: 500px;
+  background: blueviolet;
+}
+.wrapper-child {
+  height: 500px;
+  background: blueviolet;
+}
+
+.animation {
+  height: 200px;
+  background: #42abb9;
+  display: block;
+}
+
+.animation-item {
+  height: 50px;
+  width: 50px;
+}
+#a {
+  background: red;
+}
+#b {
+  background: purple;
+}
+/* ANIMATION */
+#a,
+#b {
+  position: absolute;
+}
+
+#a {
+  left: 10px;
+  top: 10px;
+  z-index: 2;
+  animation: move 1s linear;
+}
+
+#b {
+  left: 100px;
+  top: 100px;
+  z-index: 1;
+}
+
+@keyframes move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(70px);
+  }
+}
+
+#a,
+#b {
+  will-change: transform;
+}
+
+#a {
+  width: 100px;
+  height: 100px;
+}
+
+#b {
+  width: 10px;
+  height: 10px;
+  transform: scale(10);
+}
+
 .grid-layout {
   background-color: black;
   margin-bottom: 20px;
@@ -606,4 +675,16 @@ input[type="radio"]:checked + label {
 .fade-enter,
 .fade-leave-to {
   width: 0;
+}
+
+.parent {
+  background-color: red;
+  width: 300px;
+  height: 300px
+}
+.parent:has(.grand-child111) {
+  background-color: green;
+}
+.parent:has(> div.grand-child222) {
+  background-color: purple;
 }

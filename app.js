@@ -90,9 +90,8 @@ const App = {
             // clone.style.height = display.clientHeight + "px"
             console.log('xxxxxxxxxxxxxxxxxxxxx clone: ', clone)
 
-            const childs = [...clone.children].forEach(item => {
-                const properties = item.getBoundingClientRect();
-                console.log('xxxxxxxxxxxxxxxxxxxxx properties: ', properties)
+            const childs = [...clone.children].map(item => {
+                return item.getBoundingClientRect();
             })
             console.log('xxxxxxxxxxxxxxxxxxxxx childs: ', childs)
         }
